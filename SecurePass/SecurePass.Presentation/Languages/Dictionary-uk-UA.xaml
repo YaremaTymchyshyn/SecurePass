@@ -1,0 +1,95 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=System.Runtime">
+    
+    <!-- Language Panel -->
+    <System:String x:Key="LanguageTitle">Мова</System:String>
+    <System:String x:Key="SettingsTitle">Налаштування</System:String>
+
+    <!-- Theme Panel -->
+    <System:String x:Key="ThemeTitle">Тема</System:String>
+    <System:String x:Key="ThemeOptionLight">Світла</System:String>
+    <System:String x:Key="ThemeOptionDark">Темна</System:String>
+
+    <!-- UserInfo Panel -->
+    <System:String x:Key="LogOutButton">Вийти</System:String>
+
+    <!-- Menu -->
+    <System:String x:Key="MenuOptionPasswords">Паролі</System:String>
+    <System:String x:Key="MenuOptionFolders">Папки</System:String>
+    <System:String x:Key="MenuOptionTrash">Смітник</System:String>
+    <System:String x:Key="PasswordScannerStr">Сканер паролів</System:String>
+
+    <!-- Passwords Page -->
+    <System:String x:Key="PasswordsPageTitle">Всі паролі</System:String>
+    <System:String x:Key="AddPasswordButton">Додати пароль</System:String>
+    <System:String x:Key="PasswordToTrash">Пароль переміщено в смітник</System:String>
+    <System:String x:Key="PasswordCopied">Пароль скопійовано</System:String>
+
+    <!-- Folders Page -->
+    <System:String x:Key="FoldersPageTitle">Папки</System:String>
+    <System:String x:Key="AddNewFolderPanelTitle">Додати нову папку</System:String>
+    <System:String x:Key="AddNewFolderPanelSaveButton">Зберегти</System:String>
+    <System:String x:Key="FolderName">Назва папки</System:String>
+    <System:String x:Key="FolderNameExist">Папка з такою назвою вже існує!</System:String>
+    <System:String x:Key="FolderNameEmpty">Введіть назву папки!</System:String>
+    <System:String x:Key="AddFolderButton">Додати папку</System:String>
+
+    <!-- Trash Page -->
+    <System:String x:Key="TrashPageTitle">Смітник</System:String>
+    <System:String x:Key="TrashPageEmptyTitle">Смітник пустий</System:String>
+    <System:String x:Key="EmptyTrash">Очистити смітник</System:String>
+
+    <!-- CreatePassword Page -->
+    <System:String x:Key="CreatePasswordPageTitle">Новий пароль</System:String>
+    <System:String x:Key="CreatePasswordTitleTextBoxTitle">Назва</System:String>
+    <System:String x:Key="CreatePasswordEmailTextBoxTitle">Пошта або Ім'я користувача</System:String>
+    <System:String x:Key="CreatePasswordPasswordTextBoxTitle">Пароль</System:String>
+    <System:String x:Key="CreatePasswordFolderTextBoxTitle">Папка</System:String>
+    <System:String x:Key="CreatePasswordDetailsTitle">Деталі</System:String>
+    <System:String x:Key="CreatePasswordOtherTitle">Інше</System:String>
+    <System:String x:Key="CreatePasswordGeneratePasswordLabel">Згенерувати пароль</System:String>
+    <System:String x:Key="CreatePasswordSaveButton">Зберегти</System:String>
+    <System:String x:Key="CreatePasswordCancelButton">Скасувати</System:String>
+    <System:String x:Key="PasswrodGeneratorTitle">Генератор пароля</System:String>
+    <System:String x:Key="LengthStr">Довжина</System:String>
+    <System:String x:Key="CapitalLettersStr">Великі літери (A-Z)</System:String>
+    <System:String x:Key="DigitsStr">Цифри (0-9)</System:String>
+    <System:String x:Key="SymbolsStr">Символи (!@#$%^*)</System:String>
+    <System:String x:Key="FillPasswordStr">Використати</System:String>
+    <System:String x:Key="ChangePassword">Змінити пароль</System:String>
+    <System:String x:Key="PasswordTitleEmpty">Введіть назву!</System:String>
+    <System:String x:Key="PasswordEmpty">Введіть пароль!</System:String>
+    <System:String x:Key="NoFolder">Без папки</System:String>
+
+    <!-- Login/SignUp Page -->
+    <System:String x:Key="LoginTitle">Логін</System:String>
+    <System:String x:Key="SignUpTitle">Реєстрація</System:String>
+    <System:String x:Key="EmailTitle">Пошта</System:String>
+    <System:String x:Key="PasswordTitle">Пароль</System:String>
+    <System:String x:Key="LogInButton">Увійти</System:String>
+    <System:String x:Key="SignupRedirectLabel">Зареєструватися</System:String>
+    <System:String x:Key="LoginUnderPageStr" xml:space="preserve">Немає облікового запису? </System:String>
+    <System:String x:Key="SignUpUnderPageStr" xml:space="preserve">Вже є аккаунт? </System:String>
+    <System:String x:Key="InvalidFormatEmail">Недійсний формат електронної пошти</System:String>
+    <System:String x:Key="NotValidData">Введені дані для входу неправильні</System:String>
+    <System:String x:Key="InvalidFormatPassword">Недійсний формат пароля</System:String>
+    <System:String x:Key="NotFoundEmail">Електронна пошта не знайдена</System:String>
+    <System:String x:Key="InUseEmail">Електронна пошта вже використовується</System:String>
+    <System:String x:Key="OpenItem">Відкрити</System:String>
+    <System:String x:Key="CopyItem">Скопіювати</System:String>
+    <System:String x:Key="ChangeItem">Змінити</System:String>
+    <System:String x:Key="ShowItem">Показати</System:String>
+    <System:String x:Key="DeleteItem">Видалити</System:String>
+    <System:String x:Key="RestoreItem">Відновити</System:String>
+    
+    <!-- PasswordScanner Page -->
+    <System:String x:Key="WeakPasswordsStr">Слабкі паролі</System:String>
+    <System:String x:Key="WeakPasswordsSubTitleStr">Робить ваші акаунти легкодоступними для злому</System:String>
+    <System:String x:Key="ReusedPasswordsStr">Повторювані паролі</System:String>
+    <System:String x:Key="ReusedPasswordsSubTitleStr">Використовується для кількох акаунтів</System:String>
+    <System:String x:Key="OldPasswordsStr">Старі паролі</System:String>
+    <System:String x:Key="OldPasswordsSubTitleStr">Старше 90 днів</System:String>
+    <System:String x:Key="AccountsStr">аккаунти</System:String>
+
+</ResourceDictionary>

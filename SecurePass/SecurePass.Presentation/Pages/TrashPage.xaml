@@ -1,0 +1,132 @@
+﻿<Page x:Class="SecurePass.Presentation.Pages.TrashPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:SecurePass.Presentation.Pages"
+      mc:Ignorable="d" 
+      d:Width="1500"
+      d:Height="1080"
+      Loaded="Page_Loaded"
+      Background="White">
+    <Page.Resources>
+        <Style TargetType="Label" x:Key="TrashEmpty" BasedOn="{StaticResource BasicLabel}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#444444"/>
+        </Style>
+
+        <Style TargetType="Image" x:Key="TrashImage" BasedOn="{StaticResource BasicImage}">
+            <Setter Property="Height" Value="90"/>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <materialDesign:Snackbar x:Name="Snackbar" Style="{StaticResource NotificationPanel}"/>
+        <Grid Style="{StaticResource PagePanel}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="TrashLabel">  
+                <Label Content="{DynamicResource TrashPageTitle}" Style="{StaticResource pageLabel}"/>
+                <Button Style="{StaticResource EmptyButton}" Click="EmptyTrash_Click" Content="{DynamicResource EmptyTrash}">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Border Style="{StaticResource PageHorizontalLine}"/>
+            </Grid>
+
+            <StackPanel Grid.Row="1" x:Name="TrashEmpty" VerticalAlignment="Center" >
+                <Image Source="/Images/trash.png" Style="{StaticResource TrashImage}"/>
+                <Label Content="{DynamicResource TrashPageEmptyTitle}" Style="{StaticResource TrashEmpty}"/>
+            </StackPanel>
+
+            <ListView Grid.Row="1" Name="DataBinding" Style="{StaticResource ItemsList}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Border x:Name="RootBorder" Style="{StaticResource PageHorizontalLine}" Margin="0,0,60,0">
+                                        <ContentPresenter/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Tag" Value="MouseOver"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Tag" Value="MouseNotOver"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Style="{StaticResource ListItemGrid}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.RowSpan="2" VerticalAlignment="Center" x:Name="ItemEmailUsername">
+                                <TextBlock Style="{StaticResource ItemTitle}" Text="{Binding Password.Title}"/>
+                                <TextBlock Style="{StaticResource ItemEmailUsername}" Text="{Binding Password.Email_Username}"/>
+                            </StackPanel>
+
+                            <TextBlock Grid.RowSpan="2" Grid.Column="1" Style="{StaticResource ItemPassword}"/>
+
+                            <StackPanel Grid.RowSpan="2" Grid.Column="2" Style="{StaticResource CommandButtonPanel}">
+                                <Button x:Name="ShowButton" Style="{StaticResource CommandButton}" Click="ShowButton_Click">
+                                    <Image Style="{StaticResource CommandButtonImage}" Source="../Images/show.png"/>
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{StaticResource ToolTipStyle}" Content="{DynamicResource ShowItem}">
+                                            <ToolTip.Resources>
+                                                <Style TargetType="Border" BasedOn="{StaticResource ToolTipBorderStyle}"/>
+                                            </ToolTip.Resources>
+                                        </ToolTip>
+                                    </Button.ToolTip>
+                                </Button>
+                                <Button x:Name="RestoreButton" Style="{StaticResource CommandButton}" Click="RestoreButton_Click">
+                                    <Image Style="{StaticResource CommandButtonImage}" Source="../Images/restore.png"/>
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{StaticResource ToolTipStyle}" Content="{DynamicResource RestoreItem}">
+                                            <ToolTip.Resources>
+                                                <Style TargetType="Border" BasedOn="{StaticResource ToolTipBorderStyle}"/>
+                                            </ToolTip.Resources>
+                                        </ToolTip>
+                                    </Button.ToolTip>
+                                </Button>
+                                <Button x:Name="DeleteButton" Style="{StaticResource CommandButton}" Click="DeleteButton_Click">
+                                    <Image Style="{StaticResource CommandButtonImage}" Source="../Images/delete.png"/>
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{StaticResource ToolTipStyle}" Content="{DynamicResource DeleteItem}">
+                                            <ToolTip.Resources>
+                                                <Style TargetType="Border" BasedOn="{StaticResource ToolTipBorderStyle}"/>
+                                            </ToolTip.Resources>
+                                        </ToolTip>
+                                    </Button.ToolTip>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
